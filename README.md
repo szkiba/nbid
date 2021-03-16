@@ -13,10 +13,10 @@ NBID doesn't use base64 because case sensitivity and the 2 non alphanum chars ma
 ## Features
 
 - *Easy to use* - Simly a 128 bit hash without complexity of UUID.
-- *Modern hash* - You are no limited to obsoloted MD5/SHA1 hash usd by UUID. Defaul hash function is SHA256, but you can use any hash with at least 128 bit output.
-- *Compact* - String representation size is only 26 characters instead of UUID's 35 characters.
-- *Sortable* - Binary and string representation has same order (because of base32hex)
-- *No case sensitivity* - Only uppercase letters and numbers make it usable environment without real case sensitive names (DNS host names, FAT filesystem, etc).
+- *Modern hash* - Default hash function is SHA256, but you can use any hash with at least 128 bit output.
+- *Compact* - String representation size is only 26 characters.
+- *Sortable* - Binary and string representation has same order (because of base32hex).
+- *No case sensitivity* - Using only uppercase letters and numbers in string representaiton make NBID usable in environments without case sensitive names (DNS host names, FAT filesystem, etc).
 
 ## Install
 
@@ -42,10 +42,10 @@ Binary would be installed to $GOPATH/bin/nbid.
 ### Running with Docker
 
 You can also use it within a Docker container. To do that, you'll need to
-execute something more-or-less like the following:
+execute the following:
 
 ```sh
-docker run --network=host szkiba/nbid
+docker run szkiba/nbid
 ```
 
 ### Verifying your installation
@@ -67,11 +67,11 @@ To print usage information, use the `nbid --help` command:
 ```
 $ nbid --help
 
-usage: ./nbid [name]
+usage: nbid [name]
 
 Generate NBID for name, or random NBID if name is missing.
 
-Example: ./nbid "The quick brown fox jumps over the lazy dog"
+Example: nbid "The quick brown fox jumps over the lazy dog"
 Output: QUKFNCO7QU098QEAJAUB021E9S
 
   -v    prints version
